@@ -23,9 +23,10 @@ public class ParkingSlot {
         return this.id.equals(slot);
     }
 
-    public boolean unPark() {
+    public Car unPark() {
         this.availability = true;
+        Car carParked = this.carParked;
         this.carParked = null;
-        return availability;
+        return carParked;
     }
 }

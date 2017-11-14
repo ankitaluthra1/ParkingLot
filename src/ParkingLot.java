@@ -27,16 +27,16 @@ public class ParkingLot {
 
     }
 
-    public boolean unpark(String slot) {
-        boolean isFull = isFull();
+    public Car unpark(String slot) {
+        boolean wasFull = isFull();
 
         ParkingSlot parkedSpot = slots.stream().filter(s -> s.isSameLot(slot)).findFirst().get();
-        boolean unParked = parkedSpot.unPark();
+        Car carReturned = parkedSpot.unPark();
 
-        if(isFull)
+        if(wasFull)
             this.availableObservers.stream().forEach(o->o.notifyAvailability());
 
-        return unParked;
+        return carReturned;
 
     }
 

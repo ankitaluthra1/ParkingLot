@@ -30,7 +30,7 @@ public class ParkingLotTest {
 
         assertTrue(parkingLot.isFull());
 
-        assertTrue(parkingLot.unpark(parkSpace));
+        assertEquals(1,parkingLot.unpark(parkSpace).getNumber());
 
         assertFalse(parkingLot.isFull());
     }
