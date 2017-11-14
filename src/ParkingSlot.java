@@ -2,6 +2,7 @@ public class ParkingSlot {
 
     String id;
     boolean availability;
+    Car carParked;
 
     public ParkingSlot(String id) {
         this.id = id;
@@ -13,6 +14,7 @@ public class ParkingSlot {
     }
 
     public String park(Car car) {
+        this.carParked = car;
         this.availability = false;
         return id;
     }
@@ -23,6 +25,7 @@ public class ParkingSlot {
 
     public boolean unPark() {
         this.availability = true;
+        this.carParked = null;
         return availability;
     }
 }
